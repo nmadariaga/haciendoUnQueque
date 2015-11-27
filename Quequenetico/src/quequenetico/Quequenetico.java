@@ -23,8 +23,40 @@ public class Quequenetico {
        List<Queque> ListaQueques = new ArrayList<Queque>();
        int cantidad = 100;
        Random rnd = new Random();
+       
+       for( int i = 0; i<cantidad; i++){
+           Queque temporal = new Queque();
+           temporal.setId(i);
+           
+           temporal.setProporcion(rnd.nextFloat());//porcentaje [0-1]
+           
+           float tiempoBatido = rnd.nextFloat();//minutos[5-15]-->ideal 10min
+           temporal.setTiempoBatido((int)(tiempoBatido * 10 + 5));
+           
+           float tiempoCoccion = rnd.nextFloat();//minutos[15-35]-->ideal 22 min
+           temporal.setTiempoCoccion((int)(tiempoCoccion * 20 + 15));
+           
+           float tiempoEnfriamiento = rnd.nextFloat();//minutos[15-45]-->ideal 30 min temp ambiente 18°C
+           temporal.setTiempoEnfriamiento((int)(tiempoEnfriamiento * 30 + 15));
+           
+           float tiempoPrecalentamiento = rnd.nextFloat();//[15-45]min-->ideal 30min
+           temporal.setTiempoPrecalentamiento((int)(tiempoPrecalentamiento * 30 + 15));
+
+           float temperaturaHorno = rnd.nextFloat();//[140-220]°C-->ideal 180 °C 
+           temporal.setTemperaturaHorno((int)(temperaturaHorno * 80 + 140));
+
+           float tiempoMezcla  = rnd.nextFloat();//[5-15]°C-->ideal 10 min temp ambiente 18°C
+           temporal.setTiempoMezcla((int)(tiempoMezcla  * 10 + 5));
+
+           temporal.setExperiencia(rnd.nextFloat());//porcentaje [0-1]
+           
+           ListaQueques.add(temporal);
+           
+       }
+        ListaQueques.toString();
+       
               
-       float proporcion = rnd.nextFloat();//porcentaje [0-1]
+       /*float proporcion = rnd.nextFloat();//porcentaje [0-1]
        
        float tiempoBatido = rnd.nextFloat();//minutos[5-15]-->ideal 10min
        tiempoBatido = (int)(tiempoBatido * 10 + 5);
@@ -48,7 +80,7 @@ public class Quequenetico {
        float experiencia = rnd.nextFloat();//porcentaje [0-1]
        
        System.out.println("Queque{" + "proporcion=" + proporcion*100 + "%, tiempoBatido=" + tiempoBatido + "min, tiempoEnfriamiento=" + tiempoEnfriamiento + "min, tiempoPrecalentamiento=" + tiempoPrecalentamiento + "min, temperaturaHorno=" + temperaturaHorno + "°C, tiempoMezcla=" + tiempoMezcla + "min, experiencia=" + (experiencia*100) + "%}");
-
+       */
         
     }
     

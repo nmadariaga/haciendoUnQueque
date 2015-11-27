@@ -11,6 +11,7 @@ package quequenetico;
  */
 public class Queque {
     
+    private int id;
     private float proporcion;//porcentaje
     private int tiempoBatido;//minutos
     private int tiempoCoccion;//minutos
@@ -20,7 +21,13 @@ public class Queque {
     private int tiempoMezcla;//minutos
     private float experiencia;//porcentaje
 
-    public Queque(float proporcion, int tiempoBatido, int tiempoEnfriamiento, int temperaturaInicial, int temperaturaHorno, int tiempoMezcla, float experiencia) {
+    public Queque(){
+        super();
+    }
+    
+    
+    public Queque(int id, float proporcion, int tiempoBatido, int tiempoEnfriamiento, int tiempoPrecalentamiento, int temperaturaHorno, int tiempoMezcla, float experiencia) {
+        this.id = id;
         this.proporcion = proporcion;
         this.tiempoBatido = tiempoBatido;
         this.tiempoEnfriamiento = tiempoEnfriamiento;
@@ -28,6 +35,10 @@ public class Queque {
         this.temperaturaHorno = temperaturaHorno;
         this.tiempoMezcla = tiempoMezcla;
         this.experiencia = experiencia;
+    }
+    
+    public int getId(){
+        return id;
     }
 
     public float getProporcion() {
@@ -60,6 +71,10 @@ public class Queque {
 
     public float getExperiencia() {
         return experiencia;
+    }
+    
+    public void setId(int id){
+        this.id = id;
     }
 
     public void setProporcion(float proporcion) {
@@ -96,7 +111,7 @@ public class Queque {
 
     @Override
     public String toString() {
-        return "Queque{" + "proporcion=" + proporcion + ", tiempoBatido=" + tiempoBatido + ", tiempoCoccion=" + tiempoCoccion + ", tiempoEnfriamiento=" + tiempoEnfriamiento + ", tiempoPrecalentamiento=" + tiempoPrecalentamiento + ", temperaturaHorno=" + temperaturaHorno + ", tiempoMezcla=" + tiempoMezcla + ", experiencia=" + experiencia + '}';
+        return "Queque{"+"Id="+ id + ", proporcion=" + proporcion + ", tiempoBatido=" + tiempoBatido + ", tiempoCoccion=" + tiempoCoccion + ", tiempoEnfriamiento=" + tiempoEnfriamiento + ", tiempoPrecalentamiento=" + tiempoPrecalentamiento + ", temperaturaHorno=" + temperaturaHorno + ", tiempoMezcla=" + tiempoMezcla + ", experiencia=" + experiencia + '}';
     }
 
     
